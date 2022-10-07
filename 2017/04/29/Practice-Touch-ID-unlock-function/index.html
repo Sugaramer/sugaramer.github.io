@@ -21,18 +21,18 @@
     <meta name="description" content="导语iOS 8 引入了 Touch ID 认证的方式来解决输入密码的麻烦操作，Swift 最低需要 iOS 8*，因此本文会用 *Swift 来实现 Touch ID 功能 环境 macOS Sierra 10.12.4Xcode 8.3.1Swift 3.0iPhone 6S 10.1.1   Touch ID 需要硬件支持">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实践 - Touch ID 解锁功能">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;04&#x2F;29&#x2F;Practice-Touch-ID-unlock-function&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2017/04/29/Practice-Touch-ID-unlock-function/index.html">
 <meta property="og:site_name" content="牧羊人">
 <meta property="og:description" content="导语iOS 8 引入了 Touch ID 认证的方式来解决输入密码的麻烦操作，Swift 最低需要 iOS 8*，因此本文会用 *Swift 来实现 Touch ID 功能 环境 macOS Sierra 10.12.4Xcode 8.3.1Swift 3.0iPhone 6S 10.1.1   Touch ID 需要硬件支持">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;26&#x2F;59001750992e4.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;26&#x2F;59001658aecb8.jpg">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/26/59001750992e4.jpg">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/26/59001658aecb8.jpg">
 <meta property="article:published_time" content="2017-04-28T23:58:00.000Z">
 <meta property="article:modified_time" content="2019-12-16T08:59:45.138Z">
 <meta property="article:author" content="Shepherd">
 <meta property="article:tag" content="Mechanism">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;26&#x2F;59001750992e4.jpg">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/04/26/59001750992e4.jpg">
 
 
 
@@ -49,7 +49,7 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
 
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -72,7 +72,7 @@
     
 
 
-<meta name="generator" content="Hexo 4.1.1"></head>
+</head>
 <body>
     
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
@@ -81,7 +81,7 @@
             <a class="navbar-item navbar-logo" href="/">
                 
                     
-                    Shepherd
+                    牧羊人
                     
                 
             </a>
@@ -95,16 +95,16 @@
         <div class="navbar-menu navbar-start">
             
             <a class="navbar-item "
-               href="/archives">Archives</a>
-            
-            <a class="navbar-item "
                href="/categories/iOSer">iOSer</a>
             
             <a class="navbar-item "
-               href="/categories/Technology">Technology</a>
+               href="/categories/Technology">技术</a>
             
             <a class="navbar-item "
-               href="/categories/Sites">Sites</a>
+               href="/categories/Eassy">随意</a>
+            
+            <a class="navbar-item "
+               href="/archives">时间</a>
             
         </div>
         
@@ -194,7 +194,7 @@
             </div>
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/ishepherdMiner" target="_blank" rel="noopener">
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
                 
                 <i class="fab fa-github"></i>
                 
@@ -215,14 +215,17 @@
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2017-04-28T23:58:00.000Z" itemprop="datePublished">4月 29 2017</time>
+            
+                <time datetime="2017-04-28T23:58:00.000Z" itemprop="datePublished">4月 29 2017</time>
+            
         </span>
+        <!--
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
             <a class="article-category-link" href="/categories/iOSer/">iOSer</a>
         </span>
-        
+         -->
         
         <span class="column is-narrow">
             
@@ -305,7 +308,28 @@
 </article>
 
 
+<div class="sharebox">
+    
+<div class="notification is-danger">
+    You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.
+</div>
 
+</div>
+
+
+
+<div class="comments">
+    <h3 class="title is-4">评论</h3>
+    
+<div id="disqus_thread">
+    
+    <div class="notification is-danger">
+        You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.
+    </div>
+    
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
 
     </div>
 </section>
@@ -313,9 +337,9 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2020 Shepherd&nbsp;
+                &copy; 2022 Shepherd&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -324,7 +348,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos" target="_blank" rel="noopener">
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
                     
                     GitHub
                     
@@ -343,7 +367,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -402,6 +426,7 @@
                 $('.article.gallery').lightGallery({ selector: '.gallery-item' });
             }
             if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery > p > .gallery-item').unwrap();
                 $('.justified-gallery').justifiedGallery();
             }
         });
