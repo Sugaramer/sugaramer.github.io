@@ -21,29 +21,29 @@
     <meta name="description" content="前言　　一般的iOS*应用都是.ipa格式的,Deb格式是Linux下的一种打包方式,相比于.ipa格式需要证书验证那些步骤,在越狱设备下.deb*文件的安装和卸载都比较容易,用终端指令即可。 　　 环境 macOS Sierra 10.12.3  流程大致分为  创建工程 编译 安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="越狱环境下iOS如何制作.deb类型的应用">
-<meta property="og:url" content="http://yoursite.com/2017/02/07/How-to-create-a-deb-type-of-application-in-iOS/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;02&#x2F;07&#x2F;How-to-create-a-deb-type-of-application-in-iOS&#x2F;index.html">
 <meta property="og:site_name" content="牧羊人">
 <meta property="og:description" content="前言　　一般的iOS*应用都是.ipa格式的,Deb格式是Linux下的一种打包方式,相比于.ipa格式需要证书验证那些步骤,在越狱设备下.deb*文件的安装和卸载都比较容易,用终端指令即可。 　　 环境 macOS Sierra 10.12.3  流程大致分为  创建工程 编译 安装">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb40df94.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb376e1b.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb34b9ea.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb39fdff.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb3b8ac2.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5c983327c.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb4de076.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5c9ad8cab.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5c9559411.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb5e7728.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb491e22.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb5d303d.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb557774.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb40df94.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb376e1b.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb34b9ea.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb39fdff.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb3b8ac2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5c983327c.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb4de076.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5c9ad8cab.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5c9559411.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb5e7728.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb491e22.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb5d303d.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb557774.png">
 <meta property="article:published_time" content="2017-02-07T06:23:44.000Z">
 <meta property="article:modified_time" content="2019-12-16T09:11:00.431Z">
 <meta property="article:author" content="Shepherd">
 <meta property="article:tag" content="Reverse">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/02/08/589a5bb40df94.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;02&#x2F;08&#x2F;589a5bb40df94.jpg">
 
 
 
@@ -60,7 +60,7 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
 
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -83,7 +83,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 4.1.1"></head>
 <body>
     
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
@@ -92,7 +92,7 @@
             <a class="navbar-item navbar-logo" href="/">
                 
                     
-                    牧羊人
+                    Shepherd
                     
                 
             </a>
@@ -106,16 +106,16 @@
         <div class="navbar-menu navbar-start">
             
             <a class="navbar-item "
+               href="/archives">Archives</a>
+            
+            <a class="navbar-item "
                href="/categories/iOSer">iOSer</a>
             
             <a class="navbar-item "
-               href="/categories/Technology">技术</a>
+               href="/categories/Technology">Technology</a>
             
             <a class="navbar-item "
-               href="/categories/Eassy">闲话</a>
-            
-            <a class="navbar-item "
-               href="/archives">时间</a>
+               href="/categories/Sites">Sites</a>
             
         </div>
         
@@ -177,7 +177,7 @@
             </div>
             
             
-            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ishepherdMiner">
+            <a class="navbar-item" title="GitHub" href="https://github.com/ishepherdMiner" target="_blank" rel="noopener">
                 
                 <i class="fab fa-github"></i>
                 
@@ -198,18 +198,14 @@
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            
-                <time datetime="2017-02-07T06:23:44.000Z" itemprop="datePublished">2月 7 2017</time>
-            
+            <time datetime="2017-02-07T06:23:44.000Z" itemprop="datePublished">2月 7 2017</time>
         </span>
-        <!--
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
             <a class="article-category-link" href="/categories/iOSer/">iOSer</a>
         </span>
-         
-        -->
+        
         
         <span class="column is-narrow">
             
@@ -305,9 +301,9 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2022 Shepherd&nbsp;
+                &copy; 2020 Shepherd&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -316,7 +312,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
+                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos" target="_blank" rel="noopener">
                     
                     GitHub
                     
@@ -335,7 +331,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -394,7 +390,6 @@
                 $('.article.gallery').lightGallery({ selector: '.gallery-item' });
             }
             if (typeof($.fn.justifiedGallery) === 'function') {
-                $('.justified-gallery > p > .gallery-item').unwrap();
                 $('.justified-gallery').justifiedGallery();
             }
         });

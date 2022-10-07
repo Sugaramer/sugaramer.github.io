@@ -21,25 +21,25 @@
     <meta name="description" content="导语说说 iOS 中关于事件是如何传递与响应的。    因素 iOS 关键词    时间 点击&#x2F;长按&#x2F;摇一摇&#x2F;音乐暂停&#x2F;播放时    地点 响应者 UIButton&#x2F;UIView… 事件派发 &amp; 响应者链条   人物 用户&#x2F;运行循环 NSRunLoop &amp; UIApplication   事件 UITapGestureRecognizer&#x2F;UITouchUpInside… UIEv">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解iOS事件传递与响应机制">
-<meta property="og:url" content="http://yoursite.com/2017/04/04/Understand-iOS-event-delivery-and-response-mechanisms/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2017&#x2F;04&#x2F;04&#x2F;Understand-iOS-event-delivery-and-response-mechanisms&#x2F;index.html">
 <meta property="og:site_name" content="牧羊人">
 <meta property="og:description" content="导语说说 iOS 中关于事件是如何传递与响应的。    因素 iOS 关键词    时间 点击&#x2F;长按&#x2F;摇一摇&#x2F;音乐暂停&#x2F;播放时    地点 响应者 UIButton&#x2F;UIView… 事件派发 &amp; 响应者链条   人物 用户&#x2F;运行循环 NSRunLoop &amp; UIApplication   事件 UITapGestureRecognizer&#x2F;UITouchUpInside… UIEv">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b6b3605f.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b6ab1bca.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b6adacd2.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b6eb9217.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b73522e8.png">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b7a4103b.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b7384da1.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b7eb8b1a.jpg">
-<meta property="og:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b7673931.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b6b3605f.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b6ab1bca.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b6adacd2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b6eb9217.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b73522e8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b7a4103b.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b7384da1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b7eb8b1a.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b7673931.jpg">
 <meta property="article:published_time" content="2017-04-04T09:46:00.000Z">
 <meta property="article:modified_time" content="2019-12-16T09:03:43.076Z">
 <meta property="article:author" content="Shepherd">
 <meta property="article:tag" content="Mechanism">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/04/04/58e36b6b3605f.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2017&#x2F;04&#x2F;04&#x2F;58e36b6b3605f.jpg">
 
 
 
@@ -56,7 +56,7 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
 
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -79,7 +79,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 4.1.1"></head>
 <body>
     
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
@@ -88,7 +88,7 @@
             <a class="navbar-item navbar-logo" href="/">
                 
                     
-                    牧羊人
+                    Shepherd
                     
                 
             </a>
@@ -102,16 +102,16 @@
         <div class="navbar-menu navbar-start">
             
             <a class="navbar-item "
+               href="/archives">Archives</a>
+            
+            <a class="navbar-item "
                href="/categories/iOSer">iOSer</a>
             
             <a class="navbar-item "
-               href="/categories/Technology">技术</a>
+               href="/categories/Technology">Technology</a>
             
             <a class="navbar-item "
-               href="/categories/Eassy">闲话</a>
-            
-            <a class="navbar-item "
-               href="/archives">时间</a>
+               href="/categories/Sites">Sites</a>
             
         </div>
         
@@ -137,7 +137,7 @@
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#环境-amp-工具">2&nbsp;&nbsp;<b>环境 &amp;amp; 工具</b></a>
+                    <a class="navbar-item" href="#环境-amp-工具">2&nbsp;&nbsp;<b>环境 &amp;amp;amp; 工具</b></a>
                     
                     
                     <hr class="navbar-divider">
@@ -211,7 +211,7 @@
             </div>
             
             
-            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ishepherdMiner">
+            <a class="navbar-item" title="GitHub" href="https://github.com/ishepherdMiner" target="_blank" rel="noopener">
                 
                 <i class="fab fa-github"></i>
                 
@@ -232,18 +232,14 @@
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            
-                <time datetime="2017-04-04T09:46:00.000Z" itemprop="datePublished">4月 4 2017</time>
-            
+            <time datetime="2017-04-04T09:46:00.000Z" itemprop="datePublished">4月 4 2017</time>
         </span>
-        <!--
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
             <a class="article-category-link" href="/categories/iOSer/">iOSer</a>
         </span>
-         
-        -->
+        
         
         <span class="column is-narrow">
             
@@ -438,9 +434,9 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2022 Shepherd&nbsp;
+                &copy; 2020 Shepherd&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -449,7 +445,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
+                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos" target="_blank" rel="noopener">
                     
                     GitHub
                     
@@ -468,7 +464,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -527,7 +523,6 @@
                 $('.article.gallery').lightGallery({ selector: '.gallery-item' });
             }
             if (typeof($.fn.justifiedGallery) === 'function') {
-                $('.justified-gallery > p > .gallery-item').unwrap();
                 $('.justified-gallery').justifiedGallery();
             }
         });
