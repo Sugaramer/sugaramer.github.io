@@ -21,19 +21,18 @@
     <meta name="description" content="环境说明 macOS Sierra 10.12.1Xcode 8.1  获得可运行的objc源码一个可以编译并运行的objc源码才能更好的理解运行时 objc-706">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解objc运行时一:类是什么">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2016&#x2F;11&#x2F;22&#x2F;Understand-objc-runtime-1-what-is-the-class&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2016/11/22/Understand-objc-runtime-1-what-is-the-class/index.html">
 <meta property="og:site_name" content="牧羊人">
 <meta property="og:description" content="环境说明 macOS Sierra 10.12.1Xcode 8.1  获得可运行的objc源码一个可以编译并运行的objc源码才能更好的理解运行时 objc-706">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2016&#x2F;11&#x2F;22&#x2F;5833b77b6b6e4.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2016&#x2F;11&#x2F;22&#x2F;5833b77cbdca7.jpg">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/11/22/5833b77b6b6e4.jpg">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/11/22/5833b77cbdca7.jpg">
 <meta property="article:published_time" content="2016-11-21T17:32:03.000Z">
-<meta property="article:modified_time" content="2019-12-16T09:11:06.080Z">
+<meta property="article:modified_time" content="2019-12-16T09:11:06.000Z">
 <meta property="article:author" content="Shepherd">
-<meta property="article:tag" content="OC">
-<meta property="article:tag" content="运行时">
+<meta property="article:tag" content="Runtime">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2016&#x2F;11&#x2F;22&#x2F;5833b77b6b6e4.jpg">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2016/11/22/5833b77b6b6e4.jpg">
 
 
 
@@ -50,7 +49,7 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
 
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -73,7 +72,7 @@
     
 
 
-<meta name="generator" content="Hexo 4.1.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 <body>
     
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
@@ -82,7 +81,7 @@
             <a class="navbar-item navbar-logo" href="/">
                 
                     
-                    Shepherd
+                    牧羊人
                     
                 
             </a>
@@ -96,16 +95,16 @@
         <div class="navbar-menu navbar-start">
             
             <a class="navbar-item "
-               href="/archives">Archives</a>
-            
-            <a class="navbar-item "
                href="/categories/iOSer">iOSer</a>
             
             <a class="navbar-item "
-               href="/categories/Technology">Technology</a>
+               href="/categories/Technology">技术</a>
             
             <a class="navbar-item "
-               href="/categories/Sites">Sites</a>
+               href="/categories/Eassy">闲话</a>
+            
+            <a class="navbar-item "
+               href="/archives">时间</a>
             
         </div>
         
@@ -153,7 +152,7 @@
             </div>
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/ishepherdMiner" target="_blank" rel="noopener">
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ishepherdMiner">
                 
                 <i class="fab fa-github"></i>
                 
@@ -174,14 +173,18 @@
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2016-11-21T17:32:03.000Z" itemprop="datePublished">11月 22 2016</time>
+            
+                <time datetime="2016-11-21T17:32:03.000Z" itemprop="datePublished">11月 22 2016</time>
+            
         </span>
+        <!--
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
             <a class="article-category-link" href="/categories/iOSer/">iOSer</a>
         </span>
-        
+         
+        -->
         
         <span class="column is-narrow">
             
@@ -192,33 +195,36 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><blockquote>
+        <html><head></head><body><h2 id="环境说明"><a href="#环境说明" class="headerlink" title="环境说明"></a>环境说明</h2><blockquote>
 <p><em>macOS Sierra 10.12.1</em><br><em>Xcode 8.1</em></p>
 </blockquote>
-<h2 id="获得可运行的objc源码"><a href="#获得可运行的objc源码" class="headerlink" title="获得可运行的objc源码"></a>获得可运行的objc源码</h2><p>一个可以编译并运行的<em>objc</em>源码才能更好的理解运行时<br> <a href="https://github.com/ishepherdMiner/objc-706" target="_blank" rel="noopener">objc-706</a></p>
-<a id="more"></a>
+<h2 id="获得可运行的objc源码"><a href="#获得可运行的objc源码" class="headerlink" title="获得可运行的objc源码"></a>获得可运行的objc源码</h2><p>一个可以编译并运行的<em>objc</em>源码才能更好的理解运行时<br> <a target="_blank" rel="noopener" href="https://github.com/ishepherdMiner/objc-706">objc-706</a></p>
+<span id="more"></span>
 
 <h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p><em>OC</em>中的大部分类是继承自<em>NSObject</em>这个类的<br>因此从<em>NSObject</em>这个类入手</p>
 <p><strong>NSObject.h</strong></p>
-<p><figure class="highlight objc hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">NSObject</span> &lt;<span class="hljs-title">NSObject</span>&gt; </span>&#123;</span><br><span class="line">    Class isa  OBJC_ISA_AVAILABILITY;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">NSObject</span> &lt;<span class="hljs-title">NSObject</span>&gt; </span>{</span><br><span class="line">    Class isa  OBJC_ISA_AVAILABILITY;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
 <p>可知<em>NSObject</em>对象包含一个<em>Class</em>类型的<em>isa</em>指针</p>
-<h3 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h3><p><img src="https://ooo.0o0.ooo/2016/11/22/5833b77b6b6e4.jpg" alt></p>
+<h3 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h3><p><img src="https://ooo.0o0.ooo/2016/11/22/5833b77b6b6e4.jpg" alt=""></p>
 <p>有3个文件与<em>Class</em>有关</p>
 <p>打开一个其他的一个正常的<em>Xcode<em>工程,同样点击</em>Class</em></p>
-<p><img src="https://ooo.0o0.ooo/2016/11/22/5833b77cbdca7.jpg" alt></p>
+<p><img src="https://ooo.0o0.ooo/2016/11/22/5833b77cbdca7.jpg" alt=""></p>
 <p>进入到 <em>objc.h</em></p>
 <p>再进入到<em>runtime.h</em>,<em>Class</em>的定义</p>
-<p><figure class="highlight objc hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/* Types */</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> !OBJC_TYPES_DEFINED</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/// An opaque type that represents a method in a class definition.</span></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_method *Method;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/// An opaque type that represents an instance variable.</span></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_ivar *Ivar;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/// An opaque type that represents a category.</span></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_category *Category;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/// An opaque type that represents an Objective-C declared property.</span></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_property *objc_property_t;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">struct</span> objc_class &#123;</span><br><span class="line">    Class isa  OBJC_ISA_AVAILABILITY;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> !__OBJC2__</span></span><br><span class="line">    Class super_class                                        OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name                                         OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">long</span> version                                             OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">long</span> info                                                OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">long</span> instance_size                                       OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">struct</span> objc_ivar_list *ivars                             OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">struct</span> objc_method_list **methodLists                    OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">struct</span> objc_cache *cache                                 OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">struct</span> objc_protocol_list *protocols                     OBJC2_UNAVAILABLE;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">&#125; OBJC2_UNAVAILABLE;</span><br><span class="line"><span class="hljs-comment">/* Use `Class` instead of `struct objc_class *` */</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/* Types */</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> !OBJC_TYPES_DEFINED</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/// An opaque type that represents a method in a class definition.</span></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_method *Method;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/// An opaque type that represents an instance variable.</span></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_ivar *Ivar;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/// An opaque type that represents a category.</span></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_category *Category;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/// An opaque type that represents an Objective-C declared property.</span></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_property *objc_property_t;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">struct</span> objc_class {</span><br><span class="line">    Class isa  OBJC_ISA_AVAILABILITY;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> !__OBJC2__</span></span><br><span class="line">    Class super_class                                        OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name                                         OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">long</span> version                                             OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">long</span> info                                                OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">long</span> instance_size                                       OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">struct</span> objc_ivar_list *ivars                             OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">struct</span> objc_method_list **methodLists                    OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">struct</span> objc_cache *cache                                 OBJC2_UNAVAILABLE;</span><br><span class="line">    <span class="hljs-keyword">struct</span> objc_protocol_list *protocols                     OBJC2_UNAVAILABLE;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">} OBJC2_UNAVAILABLE;</span><br><span class="line"><span class="hljs-comment">/* Use `Class` instead of `struct objc_class *` */</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span></span><br></pre></td></tr></tbody></table></figure>
+
 <p>注意有个<em>#if !OBJC_TYPES_DEFINED<em>宏定义,正常</em>Xcode<em>工程找不到定义,但在</em>objc-706<em>工程中搜索可得,它在</em>objc-private.h*中,</em>#define OBJC_TYPES_DEFINED 1<em>所以上面的代码其实是不会参与编译的,真正的定义在在*objc-private.h</em>,再进入到<em>objc-runtime-old.h</em>,但是还有一个<em>objc-runtime-new.h</em>,根据命名与调试结果,真正的定义是<em>objc-runtime-new.h</em></p>
-<p><figure class="highlight objc hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">struct</span> objc_class : objc_object &#123;</span><br><span class="line">    <span class="hljs-comment">// Class ISA;</span></span><br><span class="line">    Class superclass;</span><br><span class="line">    cache_t cache;             <span class="hljs-comment">// formerly cache pointer and vtable</span></span><br><span class="line">    class_data_bits_t bits;    <span class="hljs-comment">// class_rw_t * plus custom rr/alloc flags</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight objc hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_class *Class;*</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight objc hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">struct</span> objc_class : objc_object {</span><br><span class="line">    <span class="hljs-comment">// Class ISA;</span></span><br><span class="line">    Class superclass;</span><br><span class="line">    cache_t cache;             <span class="hljs-comment">// formerly cache pointer and vtable</span></span><br><span class="line">    class_data_bits_t bits;    <span class="hljs-comment">// class_rw_t * plus custom rr/alloc flags</span></span><br><span class="line">    ...</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight objc hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> objc_class *Class;*</span><br></pre></td></tr></tbody></table></figure>
 <blockquote>
 <p><em>Class</em>是一个指向<em>objc_class</em>结构体的指针</p>
 </blockquote>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://southpeak.github.io/2014/10/25/objective-c-runtime-1/" target="_blank" rel="noopener">南峰子 - Objective-C Runtime 运行时之一：类与对象</a></li>
+<li><a target="_blank" rel="noopener" href="http://southpeak.github.io/2014/10/25/objective-c-runtime-1/">南峰子 - Objective-C Runtime 运行时之一：类与对象</a></li>
 </ul>
-
+</body></html>
     
     </div>
     
@@ -253,9 +259,9 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2020 Shepherd&nbsp;
+                &copy; 2022 Shepherd&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -264,7 +270,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos" target="_blank" rel="noopener">
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
                     
                     GitHub
                     
@@ -283,7 +289,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -342,6 +348,7 @@
                 $('.article.gallery').lightGallery({ selector: '.gallery-item' });
             }
             if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery > p > .gallery-item').unwrap();
                 $('.justified-gallery').justifiedGallery();
             }
         });

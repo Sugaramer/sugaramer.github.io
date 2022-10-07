@@ -21,19 +21,18 @@
     <meta name="description" content="目标 shell脚本自动生成应用的图标  前提 .png格式的图片进行缩小操作不会失真 应用的图标尺寸是可预先确定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速生成iOS应用的图标">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2016&#x2F;12&#x2F;08&#x2F;Quickly-generate-icons-for-iOS-apps&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/2016/12/08/Quickly-generate-icons-for-iOS-apps/index.html">
 <meta property="og:site_name" content="牧羊人">
 <meta property="og:description" content="目标 shell脚本自动生成应用的图标  前提 .png格式的图片进行缩小操作不会失真 应用的图标尺寸是可预先确定">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2016&#x2F;12&#x2F;08&#x2F;5848fbdd3d7b1.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2016&#x2F;12&#x2F;08&#x2F;5848fbdd3b959.jpg">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/12/08/5848fbdd3d7b1.jpg">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/12/08/5848fbdd3b959.jpg">
 <meta property="article:published_time" content="2016-12-08T06:14:08.000Z">
-<meta property="article:modified_time" content="2019-12-16T08:59:55.469Z">
+<meta property="article:modified_time" content="2019-12-16T08:59:55.000Z">
 <meta property="article:author" content="Shepherd">
-<meta property="article:tag" content="iOS">
-<meta property="article:tag" content="应用图标">
+<meta property="article:tag" content="utils">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;ooo.0o0.ooo&#x2F;2016&#x2F;12&#x2F;08&#x2F;5848fbdd3d7b1.jpg">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2016/12/08/5848fbdd3d7b1.jpg">
 
 
 
@@ -50,7 +49,7 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
 
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -73,7 +72,7 @@
     
 
 
-<meta name="generator" content="Hexo 4.1.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 <body>
     
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
@@ -82,7 +81,7 @@
             <a class="navbar-item navbar-logo" href="/">
                 
                     
-                    Shepherd
+                    牧羊人
                     
                 
             </a>
@@ -96,16 +95,16 @@
         <div class="navbar-menu navbar-start">
             
             <a class="navbar-item "
-               href="/archives">Archives</a>
-            
-            <a class="navbar-item "
                href="/categories/iOSer">iOSer</a>
             
             <a class="navbar-item "
-               href="/categories/Technology">Technology</a>
+               href="/categories/Technology">技术</a>
             
             <a class="navbar-item "
-               href="/categories/Sites">Sites</a>
+               href="/categories/Eassy">闲话</a>
+            
+            <a class="navbar-item "
+               href="/archives">时间</a>
             
         </div>
         
@@ -157,7 +156,7 @@
             </div>
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/ishepherdMiner" target="_blank" rel="noopener">
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ishepherdMiner">
                 
                 <i class="fab fa-github"></i>
                 
@@ -178,14 +177,18 @@
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2016-12-08T06:14:08.000Z" itemprop="datePublished">12月 8 2016</time>
+            
+                <time datetime="2016-12-08T06:14:08.000Z" itemprop="datePublished">12月 8 2016</time>
+            
         </span>
+        <!--
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
             <a class="article-category-link" href="/categories/iOSer/">iOSer</a>
         </span>
-        
+         
+        -->
         
         <span class="column is-narrow">
             
@@ -196,36 +199,39 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+        <html><head></head><body><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
 <li>shell脚本自动生成应用的图标</li>
 </ul>
 <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
 <li>.png格式的图片进行缩小操作不会失真</li>
 <li>应用的图标尺寸是可预先确定</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><blockquote>
 <p>Q: 如何调整图标尺寸?</p>
 </blockquote>
 <h3 id="找指令"><a href="#找指令" class="headerlink" title="找指令"></a>找指令</h3><p>寻找合适的指令,最好是系统自带的,搜索得知指令 <em>sips</em> 可用于调整图片的尺寸</p>
-<p><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ man sips</span><br><span class="line">NAME</span><br><span class="line">     sips -- scriptable image processing system.</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">     This tool is used to query or modify raster image files and ColorSync ICC</span><br><span class="line">     profiles.  Its functionality can also be used through the <span class="hljs-string">"Image Events"</span></span><br><span class="line">     AppleScript suite.</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sh hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ man sips</span><br><span class="line">NAME</span><br><span class="line">     sips -- scriptable image processing system.</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">     This tool is used to query or modify raster image files and ColorSync ICC</span><br><span class="line">     profiles.  Its functionality can also be used through the <span class="hljs-string">"Image Events"</span></span><br><span class="line">     AppleScript suite.</span><br></pre></td></tr></tbody></table></figure>
+
 <p><em>sips</em> 是一个可脚本化的图片执行系统,通常可用于查询或修改图片文件</p>
-<p><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-z pixelsH pixelsW</span><br><span class="line">     --resampleHeightWidth pixelsH pixelsW</span><br><span class="line">           Resample image at specified size. Image apsect ratio may be</span><br><span class="line">           altered.</span><br></pre></td></tr></table></figure><br><em>sips</em> 指令有个<em>-z</em>参数,后面跟调整后的尺寸高与宽</p>
+<figure class="highlight sh hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-z pixelsH pixelsW</span><br><span class="line">     --resampleHeightWidth pixelsH pixelsW</span><br><span class="line">           Resample image at specified size. Image apsect ratio may be</span><br><span class="line">           altered.</span><br></pre></td></tr></tbody></table></figure>
+<p><em>sips</em> 指令有个<em>-z</em>参数,后面跟调整后的尺寸高与宽</p>
 <blockquote>
 <p>Q:如何确定有哪些尺寸?</p>
 </blockquote>
-<p><strong><a href="https://developer.apple.com/library/content/qa/qa1686/_index.html" target="_blank" rel="noopener">应用图标尺寸</a></strong></p>
-<p><img src="https://ooo.0o0.ooo/2016/12/08/5848fbdd3d7b1.jpg" alt></p>
-<p><img src="https://ooo.0o0.ooo/2016/12/08/5848fbdd3b959.jpg" alt></p>
-<h3 id="generate-app-icon-sh"><a href="#generate-app-icon-sh" class="headerlink" title="generate_app_icon.sh"></a>generate_app_icon.sh</h3><p><figure class="highlight sh hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">scale_config=(</span><br><span class="line">        <span class="hljs-string">"iTunesArtwork.png"</span> 512</span><br><span class="line">        <span class="hljs-string">"iTunesArtwork@2x.png"</span> 1024</span><br><span class="line">        <span class="hljs-string">"Icon-60@2x.png"</span> 120</span><br><span class="line">        <span class="hljs-string">"Icon-60@3x.png"</span> 180</span><br><span class="line">        <span class="hljs-string">"Icon-76.png"</span> 76</span><br><span class="line">        <span class="hljs-string">"Icon-76@2x.png"</span> 152</span><br><span class="line">        <span class="hljs-string">"Icon-Small-40.png"</span> 40</span><br><span class="line">        <span class="hljs-string">"Icon-Small-40@2x.png"</span> 80</span><br><span class="line">        <span class="hljs-string">"Icon-Small-40@3x.png"</span> 120</span><br><span class="line">        <span class="hljs-string">"Icon-Small.png"</span> 29</span><br><span class="line">        <span class="hljs-string">"Icon-Small@2x.png"</span> 58</span><br><span class="line">        <span class="hljs-string">"Icon-Small@3x.png"</span> 87</span><br><span class="line">        <span class="hljs-comment"># extra</span></span><br><span class="line">     )</span><br><span class="line"></span><br><span class="line">num=<span class="hljs-variable">$&#123;#scale_config[@]&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> (( i = 0; i &lt; num; i++ )); <span class="hljs-keyword">do</span></span><br><span class="line">    cache_img=<span class="hljs-variable">$&#123;scale_config[i]&#125;</span></span><br><span class="line">    cp logo.png <span class="hljs-variable">$&#123;cache_img&#125;</span></span><br><span class="line">    i=$((<span class="hljs-variable">$&#123;i&#125;</span>+1))</span><br><span class="line">    sips -Z <span class="hljs-variable">$&#123;scale_config[i]&#125;</span>x<span class="hljs-variable">$&#123;scale_config[i]&#125;</span> <span class="hljs-variable">$&#123;cache_img&#125;</span></span><br><span class="line"><span class="hljs-keyword">done</span></span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/ishepherdMiner/Daily_sh_set" target="_blank" rel="noopener">代码</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://6226001001.blog.51cto.com/9243584/1544912" target="_blank" rel="noopener">shell 整型变量自增（加1）的几种方法</a></li>
-<li><a href="http://blog.csdn.net/shaobingj126/article/details/7395570" target="_blank" rel="noopener">shell 数组长度</a></li>
-<li><a href="https://developer.apple.com/library/content/qa/qa1686/_index.html" target="_blank" rel="noopener">应用图标尺寸</a></li>
-</ul>
+<p><strong><a target="_blank" rel="noopener" href="https://developer.apple.com/library/content/qa/qa1686/_index.html">应用图标尺寸</a></strong></p>
+<p><img src="https://ooo.0o0.ooo/2016/12/08/5848fbdd3d7b1.jpg" alt=""></p>
+<p><img src="https://ooo.0o0.ooo/2016/12/08/5848fbdd3b959.jpg" alt=""></p>
+<h3 id="generate-app-icon-sh"><a href="#generate-app-icon-sh" class="headerlink" title="generate_app_icon.sh"></a>generate_app_icon.sh</h3><figure class="highlight sh hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">scale_config=(</span><br><span class="line">        <span class="hljs-string">"iTunesArtwork.png"</span> 512</span><br><span class="line">        <span class="hljs-string">"iTunesArtwork@2x.png"</span> 1024</span><br><span class="line">        <span class="hljs-string">"Icon-60@2x.png"</span> 120</span><br><span class="line">        <span class="hljs-string">"Icon-60@3x.png"</span> 180</span><br><span class="line">        <span class="hljs-string">"Icon-76.png"</span> 76</span><br><span class="line">        <span class="hljs-string">"Icon-76@2x.png"</span> 152</span><br><span class="line">        <span class="hljs-string">"Icon-Small-40.png"</span> 40</span><br><span class="line">        <span class="hljs-string">"Icon-Small-40@2x.png"</span> 80</span><br><span class="line">        <span class="hljs-string">"Icon-Small-40@3x.png"</span> 120</span><br><span class="line">        <span class="hljs-string">"Icon-Small.png"</span> 29</span><br><span class="line">        <span class="hljs-string">"Icon-Small@2x.png"</span> 58</span><br><span class="line">        <span class="hljs-string">"Icon-Small@3x.png"</span> 87</span><br><span class="line">        <span class="hljs-comment"># extra</span></span><br><span class="line">     )</span><br><span class="line"></span><br><span class="line">num=<span class="hljs-variable">${#scale_config[@]}</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> (( i = 0; i &lt; num; i++ )); <span class="hljs-keyword">do</span></span><br><span class="line">    cache_img=<span class="hljs-variable">${scale_config[i]}</span></span><br><span class="line">    cp logo.png <span class="hljs-variable">${cache_img}</span></span><br><span class="line">    i=$((<span class="hljs-variable">${i}</span>+<span class="hljs-number">1</span>))</span><br><span class="line">    sips -Z <span class="hljs-variable">${scale_config[i]}</span>x<span class="hljs-variable">${scale_config[i]}</span> <span class="hljs-variable">${cache_img}</span></span><br><span class="line"><span class="hljs-keyword">done</span></span><br></pre></td></tr></tbody></table></figure>
 
+<p><a target="_blank" rel="noopener" href="https://github.com/ishepherdMiner/Daily_sh_set">代码</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://6226001001.blog.51cto.com/9243584/1544912">shell 整型变量自增（加1）的几种方法</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/shaobingj126/article/details/7395570">shell 数组长度</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/library/content/qa/qa1686/_index.html">应用图标尺寸</a></li>
+</ul>
+</body></html>
     
     </div>
     
@@ -260,9 +266,9 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2020 Shepherd&nbsp;
+                &copy; 2022 Shepherd&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -271,7 +277,7 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/ppoffice/hexo-theme-minos" target="_blank" rel="noopener">
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/ppoffice/hexo-theme-minos">
                     
                     GitHub
                     
@@ -290,7 +296,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -349,6 +355,7 @@
                 $('.article.gallery').lightGallery({ selector: '.gallery-item' });
             }
             if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery > p > .gallery-item').unwrap();
                 $('.justified-gallery').justifiedGallery();
             }
         });
